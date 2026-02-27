@@ -1,91 +1,46 @@
-# COM816: Comparative Evaluation of Cross-Platform Frameworks
+# # COM816 Assignment 2 — Cross-Platform Framework Comparison
 
-## Technical Evaluation Report
-
----
-
-## 1. Project Description
-
-This repository supports a comparative evaluation of three cross-platform mobile frameworks:
-
-- Flutter (Dart)
-- React Native (TypeScript)
-- Ionic (theoretical analysis)
-
-The evaluation applies programming language theory concepts:
-
-- Readability
-- Writability
-- Reliability
-- Cost
-
-The objective is to examine how language design (Dart vs. TypeScript/JavaScript) and runtime architecture influence performance, maintainability, and developer experience.
+**Module:** COM816: Organization of Programming Languages
+**Assignment:** Comparative Evaluation of Cross-Platform Frameworks
+**Topic:** React Native vs. Flutter vs. Ionic
 
 ---
 
-## 2. Implemented Experiment
+## Repository Structure
+/
+├── flutter_todo_app/
+│   ├── lib/
+│   │   └── main.dart        # Flutter To-Do List (~78 LOC)
+│   └── pubspec.yaml
+│
+├── react_native_todo_app/
+│   ├── App.tsx              # React Native To-Do List (~70 LOC)
+│   └── package.json
+│
+└── README.md
+## LOC Summary
 
-Two minimal To-Do List applications were implemented:
+| Metric | Flutter | React Native |
+|--------|---------|--------------|
+| Language | Dart | TypeScript |
+| LOC (excl. blanks & comments) | ~78 | ~70 |
+| Overhead | Flutter is 11% more verbose | — |
 
-- Flutter (Dart)
-- React Native (TypeScript)
-
-Both applications include:
-- Add task
-- Delete task
-- Dynamic UI update
-
-Ionic was not implemented because the evaluation focuses on its WebView-based architecture, which is analyzed in the report.
-
----
-
-## 3. Development Environment
+## How to Run
 
 ### Flutter
-- Flutter SDK: 3.x (Stable)
-- Dart: 3.x
-- Compilation:
-  - JIT (Development – Hot Reload)
-  - AOT (Production – Native ARM)
-
-### React Native
-- React Native: 0.7x
-- TypeScript enabled
-- Environment: React Native CLI
-- JavaScript Engine: Hermes
-
----
-
-## 4. Lines of Code (LOC) Measurement
-
-LOC was measured by counting non-empty, non-comment lines in:
-
-- flutter_todo_app/lib/main.dart
-- react_native_todo_app/App.tsx
-
-Approximate results:
-
-| Framework     | LOC |
-|--------------|-----|
-| Flutter      | ~95 |
-| React Native | ~80 |
-
-Generated files and dependencies were excluded from measurement.
-
----
-
-## 5. Key Findings
-
-- Flutter demonstrates strong runtime consistency due to AOT compilation and elimination of bridge overhead.
-- React Native benefits from JavaScript ecosystem ubiquity and reduced entry cost.
-- Ionic emphasizes code reuse but introduces additional abstraction layers affecting performance.
-
----
-
-## 6. Conclusion
-
-From a language design and architectural perspective, Flutter provides the most performance-consistent solution, while React Native offers advantages in accessibility and ecosystem support.
-
----
-
-Repository created for academic submission (COM816).
+```bash
+cd flutter_todo_app
+flutter pub get
+flutter run
+React Native
+cd react_native_todo_app
+npm install
+npx expo start
+Test Environment
+Device: MacBook Pro M2 (2023)
+iOS: iPhone 15 Pro Simulator, iOS 17.2
+Android: Pixel 7 Emulator, API 34
+Flutter version: 3.19.0
+React Native version: 0.73.6 (Expo SDK 50)
+LOC tool: counted manually, excluding blank lines and comments
